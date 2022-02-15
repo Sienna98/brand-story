@@ -41,7 +41,8 @@ body * {
 
 .wrap {
   width: 1208px;
-  height: 100vh;
+  height: 100%;
+  padding-bottom: 50px;
   margin: 0 auto;
 }
 
@@ -95,7 +96,7 @@ h3.title {
 
   .background_img {
     background-image: url(../img/main_background_img.jpg);
-    width: 1920px;
+    width: 100%;
     height: 400px;
     // background-size: cover;
     // background-repeat: none;
@@ -103,6 +104,8 @@ h3.title {
     top: 70px;
     left: 0;
     z-index: -1;
+    overflow: hidden;
+
   }
 }
 
@@ -142,13 +145,15 @@ h3.title {
     margin-top: 20px;
     border: none;
     background-color: $green03;
-    color: #fff;
     border-radius: 5px;
     font-size: 16px;
     transition: background-color 0.4s;
 
     &:hover {
       background-color: $green02;
+    }
+    a {
+      color: #fff;
     }
   }
 }
@@ -180,21 +185,48 @@ h3.title {
     }
 
     .slide {
-      &+.slide {
-        padding: 0 10px;
+      &:not(:last-of-type) {
+        padding-right:20px;
       }
 
       img {
         width: 240px;
         height: 280px;
       }
+      .s_title{
+        font-weight: 500;
+        padding-left: 10px;
+      }
+      .new{
+        font-size: 12px;
+        float: right;
+        padding: 2px 5px;
+        font-weight: 500;
+        color: #fff;
+        margin-right: 10px;
+        background-color: #004134;
+        border-radius: 5px;
+      }
+      .date, .played {
+        font-size: 14px;
+        font-weight: 500;
+        color: $gray02;
+        padding-left: 10px;
+      }
     }
   }
 
   .more_story {
-    color: $green03;
     font-size: 18px;
     font-weight: 500;
+
+    a {
+      color: $green03;
+
+      span {
+        padding-left: 15px;
+      }
+    }
   }
 }
 
@@ -203,9 +235,11 @@ h3.title {
 
   .board_list {
     padding: 10px 0;
+
     dl {
       padding: 30px 0 30px;
       border-bottom: 1px solid #D9D9D9;
+
       dt {
         font-size: 20px;
         font-weight: bold;
