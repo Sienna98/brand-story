@@ -160,6 +160,24 @@ h3.title {
   font-weight: 500;
 }
 
-.board_list {
+.board {
   padding: 30px 34px;
+}
+.board .board_list {
+  padding: 10px 0;
+}
+.board .board_list dl {
+  padding: 30px 0 30px;
+  border-bottom: 1px solid #D9D9D9;
+}
+.board .board_list dl dt {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0 0 10px;
+  color: #08896F;
+}
+.board .board_list dl dd {
+  font-size: 18px;
+  font-weight: 500;
+  color: #636363;
 }/*# sourceMappingURL=style.css.map */
