@@ -80,7 +80,7 @@ h3.title {
         left: 0;
       }
 
-      input {
+      .input {
         width: 300px;
         height: 42px;
         padding-left: 42px;
@@ -90,6 +90,10 @@ h3.title {
         background-color: #FAFAFA;
         color: #b4b4b4;
         font-size: 14px;
+        transition: all 1s;
+        &:focus {
+          border: 1px solid $green02;
+        }
       }
     }
   }
@@ -152,6 +156,7 @@ h3.title {
     &:hover {
       background-color: $green02;
     }
+
     a {
       color: #fff;
     }
@@ -167,7 +172,7 @@ h3.title {
 
   .slide_list {
     display: flex;
-    padding: 20px 0;
+    padding: 20px 0 30px;
     margin-bottom: 20px;
     width: 100%;
     overflow-x: scroll;
@@ -186,18 +191,37 @@ h3.title {
 
     .slide {
       &:not(:last-of-type) {
-        padding-right:20px;
+        padding-right: 20px;
       }
 
-      img {
-        width: 240px;
-        height: 280px;
+      &>a {
+        display: block;
       }
-      .s_title{
+
+      .cover {
+        width: 232px;
+        height: 272px;
+        margin-bottom: 10px;
+        border-radius: 15px;
+        overflow: hidden;
+
+        img {
+          width: 240px;
+          height: 280px;
+          transition: all 0.4s;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      .s_title {
         font-weight: 500;
         padding-left: 10px;
       }
-      .new{
+
+      .new {
         font-size: 12px;
         float: right;
         padding: 2px 5px;
@@ -207,11 +231,17 @@ h3.title {
         background-color: #004134;
         border-radius: 5px;
       }
-      .date, .played {
+
+      .date,
+      .played {
         font-size: 14px;
         font-weight: 500;
         color: $gray02;
         padding-left: 10px;
+      }
+
+      .date {
+        margin: 5px 0;
       }
     }
   }
@@ -222,9 +252,8 @@ h3.title {
 
     a {
       color: $green03;
-
-      span {
-        padding-left: 15px;
+      &:hover {
+        
       }
     }
   }
