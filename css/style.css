@@ -45,12 +45,16 @@ h3.title {
   height: 70px;
 }
 .header .topbar .logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 150px;
   height: 100%;
   margin-left: 36px;
+}
+.header .topbar .logo a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .header .topbar .search {
   position: absolute;
