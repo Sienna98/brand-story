@@ -206,7 +206,24 @@ h3.title {
 }
 .img_slide_wrap .more_story a {
   color: #004134;
+  width: 100%;
+  margin-right: 10px;
+  position: relative;
 }
+.img_slide_wrap .more_story a::before {
+  content: "";
+  width: 0;
+  height: 1px;
+  background-color: #004134;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  transition: width 0.3s;
+}
+.img_slide_wrap .more_story a:hover::before {
+  width: 100%;
+}
+
 .board {
   padding: 30px 34px;
 }
@@ -227,4 +244,13 @@ h3.title {
   font-size: 18px;
   font-weight: 500;
   color: #636363;
+}
+
+.review_wrap {
+  width: 968px;
+  margin: 0 auto;
+}
+
+.profile_wrap.review {
+  margin-top: 50px;
 }/*# sourceMappingURL=style.css.map */

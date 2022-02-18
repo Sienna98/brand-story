@@ -91,6 +91,7 @@ h3.title {
         color: #b4b4b4;
         font-size: 14px;
         transition: all 1s;
+
         &:focus {
           border: 1px solid $green02;
         }
@@ -252,8 +253,26 @@ h3.title {
 
     a {
       color: $green03;
+      width: 100%;
+      margin-right: 10px;
+      position: relative;
+
+      &::before {
+        content: '';
+        width:0;
+        height: 1px;
+        background-color: $green03;
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        transition: width 0.3s;
+      }
+
       &:hover {
-        
+        &::before {
+          width: 100%;
+
+        }
       }
     }
   }
@@ -283,4 +302,15 @@ h3.title {
       }
     }
   }
+}
+
+
+///////////////////////////////////////평점보기
+.review_wrap {
+  width: 968px;
+  margin: 0 auto;
+}
+
+.profile_wrap.review {
+  margin-top: 50px;
 }
