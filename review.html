@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brand Story_평점보기</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://kit.fontawesome.com/f45a5a9aab.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -32,9 +33,120 @@
         </div>
         <div class="review_chart"></div>
       </section>
+      <section class="review_search">
+        <div class="select_btn">
+          <input type="text" value="내용" class="button" readonly>
+          <span class="arrow"><i class="fa-solid fa-caret-down"></i></span>
+          <ul class="dropdown">
+            <li class="option 1">내용</li>
+            <li class="option 2">제품명</li>
+          </ul>
+        </div>
+        
+      </section>
     </div>
     
   </div>
 </body>
-
+<script>
+  const selectors = document.querySelectorAll(".select_btn");
+  
+  const CLASSNAME = {
+    SELECTOR_FOCUS: "focused",
+  };
+  
+  const closure = function () {
+    const state = {
+      self: null, 
+      dropdown: null, 
+      input: null, 
+      toggle: false, 
+    };
+  
+    function attachEvent() {
+      document.addEventListener("mouseup", event);
+    }
+  
+    function detachEvent() {
+      if (state.dropdown) { 
+        state.dropdown.classList.remove(CLASSNAME.SELECTOR_FOCUS); 
+        document.removeEventListener("mouseup", event); 
+        state.toggle = false; 
+      }
+    }
+  
+    function event() {
+      if (state.toggle) {
+        detachEvent();
+        return;
+      }
+  
+      state.toggle = true;
+    }
+  
+    function attachItemEvent() {
+      let itemToArray = Array.from(state.dropdown.children);
+  
+      itemToArray.forEach(function (li) {
+        li.addEventListener("click", setValue);
+      });
+    }
+  
+    function detachItemEvent() {
+      let itemToArray = Array.from(state.dropdown.children);
+  
+      itemToArray.forEach(function (li) {
+        li.removeEventListener("click", setValue);
+      });
+    }
+  
+    function setValue() {
+      state.input.value = this.innerText;
+      detachItemEvent();
+    }
+  
+    return function (el) { 
+  
+  
+      if (!el) return; 
+  
+      state.self = el; 
+      state.input = state.self.children[0]; 
+  
+      state.self.addEventListener("mouseup", function (ev) {
+        state.dropdown = state.self.children[2]; 
+  
+        if (state.dropdown && state.dropdown.classList.contains("dropdown")) {  
+          state.dropdown.classList.add(CLASSNAME.SELECTOR_FOCUS); 
+          attachEvent();
+          attachItemEvent();
+        }
+      });
+    };
+  };
+  
+  selectors.forEach(function (selector) {
+    const register = closure();
+    register(selector);
+  });
+  
+  
+  // let dropdown_btn = document.querySelector('.select_btn > .button')
+  // let arrow = document.querySelector('.arrow > i')
+  // let option = document.querySelectorAll('.option')  
+  // let dropDown = document.querySelector('.dropdown')
+  
+  // dropdown_btn.addEventListener('focus', function() {
+  //   dropDown.classList.add('focused')
+  //   arrow.classList.add('green')
+  // })
+  
+  // option.forEach(function(value) {
+  //   value.addEventListener('click', function(event) {
+  //     dropdown_btn.value = event.currentTarget.textContent;
+  //     dropDown.classList.remove('focused')
+  //     arrow.classList.remove('green')
+  //     });
+  // });
+  </script>
 </html>

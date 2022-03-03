@@ -61,6 +61,7 @@ h3.title {
       width: 150px;
       height: 100%;
       margin-left: 36px;
+
       a {
         width: 100%;
         height: 100%;
@@ -164,6 +165,11 @@ h3.title {
     }
 
     a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
       color: #fff;
     }
   }
@@ -264,7 +270,7 @@ h3.title {
 
       &::before {
         content: '';
-        width:0;
+        width: 0;
         height: 1px;
         background-color: $green03;
         position: absolute;
@@ -318,4 +324,49 @@ h3.title {
 
 .profile_wrap.review {
   margin-top: 50px;
+}
+
+.review_search {
+  .select_btn {
+    width: 85px;
+    position: relative;
+
+    input {
+      display: block;
+      width: 100%;
+      height: 46px;
+      text-align: center;
+      font-size: 14px;
+      color: $gray01;
+      outline: none;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 2px 0px 8px 1px rgb(0 0 0 / 5%);
+      cursor: pointer;
+    }
+
+    .arrow {
+      i {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 10px;
+        font-size: 1rem;
+        color: $gray01;
+      }
+    }
+    .dropdown {
+      width: 100%;
+      text-align: left;
+      color: #969696;
+      border: 1px solid #E8E8E8;
+      border-radius: 5px;
+      box-shadow: 1px 4px 8px 1px rgb(0 0 0 / 10%);
+      display: none;
+      background-color: #fff;
+      position: absolute;
+      top: 55px;
+      left: 0;
+    }
+  }
 }

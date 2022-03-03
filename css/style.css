@@ -134,6 +134,11 @@ h3.title {
   background-color: #08896F;
 }
 .profile_wrap button.review_button a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
   color: #fff;
 }
 
@@ -257,4 +262,43 @@ h3.title {
 
 .profile_wrap.review {
   margin-top: 50px;
+}
+
+.review_search .select_btn {
+  width: 85px;
+  position: relative;
+}
+.review_search .select_btn input {
+  display: block;
+  width: 100%;
+  height: 46px;
+  text-align: center;
+  font-size: 14px;
+  color: #636363;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 0px 8px 1px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+.review_search .select_btn .arrow i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  font-size: 1rem;
+  color: #636363;
+}
+.review_search .select_btn .dropdown {
+  width: 100%;
+  text-align: left;
+  color: #969696;
+  border: 1px solid #E8E8E8;
+  border-radius: 5px;
+  box-shadow: 1px 4px 8px 1px rgba(0, 0, 0, 0.1);
+  display: none;
+  background-color: #fff;
+  position: absolute;
+  top: 55px;
+  left: 0;
 }/*# sourceMappingURL=style.css.map */
